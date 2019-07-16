@@ -1,0 +1,10 @@
+jdbc:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://104.225.146.180:3306/test/user
+  username: root
+  password: 1314
+
+#激活其他配置文件(多个使用,间隔)
+spring:
+  profiles:
+    active: haha
