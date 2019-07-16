@@ -8,3 +8,6 @@ jdbc:
 spring:
   profiles:
     active: haha
+
+server:
+  port: 80
