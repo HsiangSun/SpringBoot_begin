@@ -16,7 +16,7 @@ spring:
       username: root
       password: 1314
 
-#mybatis:
+  #mybatis:
   # 实体类别名包路径
   type-aliases-package: cn.hsiangsun.pojo
   # 映射文件路径
@@ -27,6 +27,15 @@ spring:
   redis:
     host: 104.225.146.180
     port: 6379
+
+#rabbitMQ配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+
 
 
 server:
