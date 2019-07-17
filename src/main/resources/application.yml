@@ -1,13 +1,42 @@
-jdbc:
-  driverClassName: com.mysql.jdbc.Driver
-  url: jdbc:mysql://104.225.146.180:3306/test/user
-  username: root
-  password: 1314
+#jdbc:
+#  driverClassName: com.mysql.jdbc.Driver
+#  url: jdbc:mysql://104.225.146.180:3306/test/user
+#  username: root
+#  password: 1314
 
-#激活其他配置文件(多个使用,间隔)
+#Spring所需要的配置文件
 spring:
+  #加载自己写的配置文件
   profiles:
-    active: haha
+    active: haha #(多个使用,间隔)
+  #data source (hikari)
+  datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/spring
+      username: root
+      password: 1314
+
+#mybatis:
+  # 实体类别名包路径
+  type-aliases-package: cn.hsiangsun.pojo
+  # 映射文件路径
+  # mapper-locations: classpath:mappers/*.xml
+  configuration:
+   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #后台打印日志
+   #redis配置
+  redis:
+    host: 104.225.146.180
+    port: 6379
+
 
 server:
-  port: 80
+  port: 80 #端口
+  servlet:
+    context-path: /spring #项目名
+
+#设置日志级别
+logging:
+  level:
+    cn.hsiangsun: debug
+    org.springframework: info
+
